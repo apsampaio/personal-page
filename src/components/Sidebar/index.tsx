@@ -26,9 +26,9 @@ const Sidebar = ({ handleToggleTheme }: any) => {
         <h2>André Sampaio</h2>
         <p>Software and Firmware Developer</p>
       </InfoHolder>
-      <span>TECHNOLOGIES</span>
+      {/* <span>TECHNOLOGIES</span>
       <span>ABOUT</span>
-      <span>TIMELINE</span>
+      <span>TIMELINE</span> */}
       <div style={{ marginTop: "auto" }}>
         {/* 
         //@ts-ignore */}
