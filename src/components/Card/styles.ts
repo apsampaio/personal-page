@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Tilt from "react-tilt";
 
 interface ContainerProps {
     color: string;
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled(Tilt)<ContainerProps>`
     width: 200px;
     height: 190px;
     background: ${({ theme }) => (theme.name === "dark" ? "#44475A" : "#7678ed")};
@@ -24,6 +25,7 @@ export const Container = styled.div<ContainerProps>`
 
     margin-left: 64px;
     margin-top: 16px;
+
 `;
 
 export const Title = styled.p`

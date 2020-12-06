@@ -10,7 +10,12 @@ export interface CardProps {
 
 const Card: React.FC<CardProps> = ({ color, path, title }) => {
   return (
-    <Container color={color}>
+    <Container
+      color={color}
+      options={{
+        max: 25,
+      }}
+    >
       <Icon src={path} alt={title} />
       <Title>{title}</Title>
     </Container>
