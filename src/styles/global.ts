@@ -9,6 +9,7 @@ export default createGlobalStyle`
   }
   
   body {
+    -webkit-font-smoothing: antialiased;
     background-color: ${({ theme }) => theme.colors.background};
     transition: all 0.25s linear;
   }

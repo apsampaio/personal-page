@@ -23,6 +23,7 @@ export const Container = styled.div<ContainerProps>`
 
 
     margin-left: 64px;
+    margin-top: 16px;
 `;
 
 export const Title = styled.p`
