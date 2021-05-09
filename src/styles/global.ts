@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 * {
@@ -8,11 +8,13 @@ export default createGlobalStyle`
     font-family: "Work Sans", sans-serif;
   }
   
+  html, body {
+    height: 100%
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     background-color: ${({ theme }) => theme.colors.background};
-    transition: all 0.25s linear;
+    overflow: hidden;
   }
 `;
-
-export const PagesHolder = styled.div``;

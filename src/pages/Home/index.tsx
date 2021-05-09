@@ -1,15 +1,45 @@
-import React from "react";
-import { HomeBackground } from "./styles";
-import Card from "../../components/Card";
-import data from "../../data";
+import React, { useEffect, useRef } from "react";
+import { Main, Container } from "./styles";
 
-const Home = () => {
+const Home: React.FC = () => {
+  const mainRef = useRef(null);
+
+  const handleWheel = (ev) => {
+    console.log("❗ Evento de Roda");
+    if (ev.deltaY > 0) {
+      scrollWindowY(window.innerHeight, 600);
+    } else {
+      scrollWindowY(-window.innerHeight, 600);
+    }
+  };
+
+  function scrollWindowY(to: number, duration: number) {
+    if (duration <= 0) {
+      return;
+    }
+
+    let difference = to - window.pageYOffset;
+    let perTick = (difference / duration) * 10;
+
+    setTimeout(function () {
+      window.scrollTo(0, window.pageYOffset + perTick);
+      if (window.scrollY === to) return;
+      scrollWindowY(to, duration - 10);
+    }, 10);
+  }
+
   return (
-    <HomeBackground>
-      {data.map(({ color, path, title }) => (
-        <Card title={title} color={color} path={path} key={title} />
-      ))}
-    </HomeBackground>
+    <Main ref={mainRef} onWheel={handleWheel}>
+      <section
+        className="section"
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100vw",
+          height: "100vh",
+        }}
+      ></section>
+      <Container className="section"></Container>
+    </Main>
   );
 };
 
