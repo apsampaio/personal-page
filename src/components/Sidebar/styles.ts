@@ -12,7 +12,9 @@ export const SidebarHolder = styled.aside`
 
   z-index: 10;
 
-  background-color: ${({ theme }) => theme.colors.sidebar};
+  background: ${({ theme }) => theme.colors.sidebar};
+
+  transition: background 1s linear;
 
   span {
     font-size: 20px;

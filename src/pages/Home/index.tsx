@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Main, Container } from "./styles";
 
 const Home: React.FC = () => {
-  const mainRef = useRef(null);
-
-  const handleWheel = (ev) => {
+  const handleWheel: React.WheelEventHandler<HTMLDivElement> | undefined = (
+    ev
+  ) => {
     console.log("❗ Evento de Roda");
     if (ev.deltaY > 0) {
       scrollWindowY(window.innerHeight, 600);
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     }
   };
 
-  function scrollWindowY(to: number, duration: number) {
+  const scrollWindowY = (to: number, duration: number) => {
     if (duration <= 0) {
       return;
     }
@@ -26,10 +26,10 @@ const Home: React.FC = () => {
       if (window.scrollY === to) return;
       scrollWindowY(to, duration - 10);
     }, 10);
-  }
+  };
 
   return (
-    <Main ref={mainRef} onWheel={handleWheel}>
+    <Main onWheel={handleWheel}>
       <section
         className="section"
         style={{

@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Sidebar from "../src/components/Sidebar";
