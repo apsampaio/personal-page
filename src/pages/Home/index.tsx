@@ -1,6 +1,8 @@
 import React from "react";
 import { Main, Container } from "./styles";
 
+import { Canvas } from "../Canvas";
+
 const Home: React.FC = () => {
   const handleWheel: React.WheelEventHandler<HTMLDivElement> | undefined = (
     ev
@@ -30,15 +32,13 @@ const Home: React.FC = () => {
 
   return (
     <Main onWheel={handleWheel}>
+      <Canvas />
       <section
         className="section"
         style={{
           backgroundColor: "dodgerblue",
-          width: "100vw",
-          height: "100vh",
         }}
       ></section>
-      <Container className="section"></Container>
     </Main>
   );
 };
