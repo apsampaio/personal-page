@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import Sidebar from "../src/components/Sidebar";
 
 import Home from "./pages/Home";
+import { Landing } from "./pages/Landing";
 
 import GlobalStyle from "./styles/global";
 import light from "./styles/themes/light";
@@ -18,9 +19,9 @@ const App = () => {
   return (
     <ThemeProvider theme={theme ? dark : light}>
       <GlobalStyle />
-      <Sidebar handleToggleTheme={handleToggleTheme} />
+      {/* <Sidebar handleToggleTheme={handleToggleTheme} /> */}
       <>
-        <Home />
+        <Landing />
       </>
     </ThemeProvider>
   );
