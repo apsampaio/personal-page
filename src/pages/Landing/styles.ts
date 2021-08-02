@@ -40,6 +40,19 @@ export const Content = styled.div`
   flex-direction: column;
 
   padding: 16px;
+
+  text-align: center;
+`;
+
+export const Name = styled.p`
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+
+  border-bottom: 1px solid white;
+
+  padding: 0px 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const Skill = styled.h1`
@@ -47,17 +60,13 @@ export const Skill = styled.h1`
   font-size: 3rem;
   color: white;
 
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 `;
 
 export const Greeting = styled.h3`
   font-size: 2rem;
   font-weight: 400;
   color: white;
-`;
-
-export const Buttons = styled.div`
-  display: flex;
 `;
 
 export const ContactButton = styled.button`
@@ -78,6 +87,8 @@ export const ContactButton = styled.button`
   padding: 0.5em 2em;
 
   transition: all 0.3s;
+
+  text-transform: uppercase;
 
   &::before,
   &::after {
@@ -122,7 +133,10 @@ export const About = styled.a`
 
   padding: 0.5em 1em;
 
+  transition: color 0.2s ease;
+
   &:hover {
     cursor: pointer;
+    color: #50fa7b;
   }
 `;

@@ -5,9 +5,9 @@ import {
   VideoContainer,
   Background,
   Content,
+  Name,
   Skill,
   Greeting,
-  Buttons,
   About,
   ContactButton,
 } from "./styles";
@@ -21,6 +21,7 @@ const Landing: React.FC = () => {
         <Background autoPlay loop muted src={Video} />
       </VideoContainer>
       <Content>
+        <Name>Andre Sampaio</Name>
         <Skill>SOFTWARE DEVELOPER</Skill>
         <Greeting>I find solutions and write some code.</Greeting>
         <ContactButton>Say Hello</ContactButton>
