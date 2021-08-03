@@ -25,7 +25,7 @@ const Landing: React.FC = () => {
         <Skill>SOFTWARE DEVELOPER</Skill>
         <Greeting>I find solutions and write some code.</Greeting>
         <ContactButton>Say Hello</ContactButton>
-        <About>About Me</About>
+        <About to="/about">About Me</About>
       </Content>
     </Container>
   );

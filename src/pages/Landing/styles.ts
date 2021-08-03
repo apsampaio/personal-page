@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100vw;
@@ -120,7 +121,7 @@ export const ContactButton = styled.button`
   }
 `;
 
-export const About = styled.a`
+export const About = styled(Link)`
   display: block;
   position: relative;
   overflow: hidden;
@@ -134,6 +135,7 @@ export const About = styled.a`
   padding: 0.5em 1em;
 
   transition: color 0.2s ease;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;

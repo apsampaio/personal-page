@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-
-import Sidebar from "../src/components/Sidebar";
-
-import Home from "./pages/Home";
-import { Landing } from "./pages/Landing";
-
 import GlobalStyle from "./styles/global";
+
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
+
+import { Routes } from "./routes";
 
 const App = () => {
   const [theme, setTheme] = useState(true);
@@ -19,9 +16,8 @@ const App = () => {
   return (
     <ThemeProvider theme={theme ? dark : light}>
       <GlobalStyle />
-      {/* <Sidebar handleToggleTheme={handleToggleTheme} /> */}
       <>
-        <Landing />
+        <Routes />
       </>
     </ThemeProvider>
   );
