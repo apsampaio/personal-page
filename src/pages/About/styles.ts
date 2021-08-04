@@ -1,12 +1,22 @@
 import styled from "styled-components";
+import Sketch from "react-p5";
 
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background: linear-gradient(180deg, #1d1d1f 10%, #282a36 100%);
+  background: transparent;
+  /* linear-gradient(180deg, #1d1d1f 10%, #282a36 100%); */
 
   display: flex;
+
+  &:hover {
+    cursor: none;
+  }
+`;
+
+export const Canvas = styled(Sketch)`
+  position: absolute;
 `;
 
 export const Header = styled.div`
@@ -19,6 +29,8 @@ export const Header = styled.div`
 
   align-items: center;
   justify-content: space-between;
+
+  z-index: 15;
 `;
 
 export const Logo = styled.img`
@@ -26,6 +38,19 @@ export const Logo = styled.img`
   height: 3rem;
 
   filter: brightness(0) invert(1);
+
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: none;
+  }
 `;
 
 export const ContactButton = styled.button`
