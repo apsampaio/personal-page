@@ -1,19 +1,34 @@
 import React from "react";
-
-import Sketch from "react-p5";
 import P5 from "p5";
 
 import { Container, Canvas, Header, Logo, ContactButton } from "./styles";
+import { Particle } from "./draw";
 
 import LogoImage from "../../assets/moai.png";
+
+let particles: Particle[] = [];
 
 const About: React.FC = () => {
   const draw = (p5: P5) => {
     p5.background("#1d1d1f");
-    p5.ellipse(p5.mouseX, p5.mouseY, 70, 70);
+
+    const mouseVector = p5.createVector(p5.mouseX, p5.mouseY);
+
+    particles.map((particle) => {
+      particle.attraction(p5.createVector(500, 500));
+      particle.show();
+      particle.update();
+    });
   };
 
   const setup = (p5: P5, canvasParentRef: any) => {
+    particles = [
+      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
+      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
+      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
+      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
+    ];
+
     const canvas = p5
       .createCanvas(window.innerWidth, window.innerHeight)
       .parent(canvasParentRef);

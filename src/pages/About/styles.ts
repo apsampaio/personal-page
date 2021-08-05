@@ -6,13 +6,8 @@ export const Container = styled.div`
   height: 100vh;
 
   background: transparent;
-  /* linear-gradient(180deg, #1d1d1f 10%, #282a36 100%); */
 
   display: flex;
-
-  &:hover {
-    cursor: none;
-  }
 `;
 
 export const Canvas = styled(Sketch)`
