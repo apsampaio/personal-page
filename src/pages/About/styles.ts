@@ -34,18 +34,11 @@ export const Logo = styled.img`
 
   filter: brightness(0) invert(1);
 
-  user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-
-  transition: all 0.3s ease;
-
-  &:hover {
-    filter: none;
-  }
 `;
 
 export const ContactButton = styled.button`

@@ -28,19 +28,21 @@ class Particle {
   public update() {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
+    this.acc.mult(0);
   }
 
   public attraction(target: P5.Vector) {
-    const force = target.sub(this.pos);
+    const force = P5.Vector.sub(target, this.pos);
+
     let distance_squared = force.magSq();
 
-    distance_squared = this.p5.constrain(distance_squared, 25, 400);
+    distance_squared = this.p5.constrain(distance_squared, 25, 500);
 
-    const gravity = 50;
-    const strength = 1; //gravity / distance_squared;
+    const gravity = 15;
+    const strength = gravity / distance_squared;
 
     force.setMag(strength);
-    this.acc = force;
+    this.acc.add(force);
   }
 }
 

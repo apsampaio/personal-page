@@ -15,7 +15,7 @@ const About: React.FC = () => {
     const mouseVector = p5.createVector(p5.mouseX, p5.mouseY);
 
     particles.map((particle) => {
-      particle.attraction(p5.createVector(500, 500));
+      particle.attraction(mouseVector);
       particle.show();
       particle.update();
     });
@@ -23,10 +23,46 @@ const About: React.FC = () => {
 
   const setup = (p5: P5, canvasParentRef: any) => {
     particles = [
-      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
-      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
-      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
-      new Particle(p5, window.innerWidth / 2, window.innerHeight / 2),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
+      new Particle(
+        p5,
+        p5.random(0, window.innerWidth),
+        p5.random(0, window.innerHeight)
+      ),
     ];
 
     const canvas = p5
