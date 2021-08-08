@@ -8,6 +8,9 @@ class Segment {
   sw: number;
   angle: number;
 
+  vel: P5.Vector;
+  acc: P5.Vector;
+
   p5: P5;
 
   constructor(
@@ -25,6 +28,13 @@ class Segment {
     this.sw = p5.map(index, 0, total, 1, 10);
     this.angle = 0;
     this.p5 = p5;
+
+    const velx = Math.random() * 2 - 1;
+    const vely = Math.random() * 2 - 1;
+
+    this.vel = p5.createVector(velx, vely);
+    this.acc = p5.createVector();
+
     this.calculateB();
   }
 
@@ -39,8 +49,6 @@ class Segment {
     this.calculateB();
   }
 
-  // To avoid having 2 follow methods always
-  // pass a vector as the only argument
   follow(target: P5.Vector) {
     const { a, len } = this;
     const dir = P5.Vector.sub(target, a);
@@ -56,10 +64,26 @@ class Segment {
     const dy = len * p5.sin(angle);
     b.set(a.x + dx, a.y + dy);
   }
+
+  public attraction(target: P5.Vector) {
+    const force = P5.Vector.sub(target, this.a);
+
+    let distance_squared = force.magSq();
+
+    distance_squared = this.p5.constrain(distance_squared, 25, 500);
+
+    const gravity = 100;
+    const strength = gravity / distance_squared;
+
+    force.setMag(strength);
+    this.acc.add(force);
+
+    this.a.add(this.vel);
+    this.vel.add(this.acc);
+    this.acc.mult(0);
+  }
 }
 
-// The only way to have two constructor methods in javascript
-// is by creating another class that extends Segment
 class SegmentChild extends Segment {
   parent: Segment;
 
