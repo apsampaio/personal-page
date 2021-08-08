@@ -4,12 +4,9 @@ import P5 from "p5";
 import { Container, Canvas, Header, Logo, ContactButton } from "./styles";
 import LogoImage from "../../assets/moai.png";
 
-import { countNeighbors, make2DArray } from "./Background";
+import { GameOfLife } from "./GameOfLife";
 
-let grid: number[][] = [];
-const resolution = 5;
-let cols: number;
-let rows: number;
+let background: GameOfLife;
 
 const About: React.FC = () => {
   const setup = (p5: P5, canvasParentRef: any) => {
@@ -17,46 +14,15 @@ const About: React.FC = () => {
       canvasParentRef
     );
 
-    cols = Math.floor(window.innerWidth / resolution);
-    rows = Math.floor(window.innerHeight / resolution);
+    const resolution = 10;
+    const cols = Math.floor(window.innerWidth / resolution);
+    const rows = Math.floor(window.innerHeight / resolution);
 
-    grid = make2DArray(cols, rows);
+    background = new GameOfLife(p5, cols, rows, resolution);
   };
 
   const draw = (p5: P5) => {
-    p5.background("#1d1d1f");
-
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        let x = i * resolution;
-        let y = j * resolution;
-        if (grid[i][j] === 1) {
-          p5.fill(255);
-          p5.rect(x, y, resolution - 1, resolution - 1);
-        }
-      }
-    }
-    const next = make2DArray(cols, rows);
-
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        let state = grid[i][j];
-
-        const neighbors = countNeighbors(grid, i, j, cols, rows);
-
-        if (state === 0 && neighbors === 3) {
-          // If there is 3 neighbors, create life
-          next[i][j] = 1;
-        } else if (state === 1 && (neighbors < 2 || neighbors > 3)) {
-          // If there is less than 3 neighbors or more than 3, dies
-          next[i][j] = 0;
-        } else {
-          next[i][j] = state;
-        }
-      }
-    }
-
-    grid = next;
+    if (background) background.show();
   };
 
   const handlewindowResize = (p5: P5) => {
