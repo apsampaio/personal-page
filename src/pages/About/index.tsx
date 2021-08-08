@@ -14,6 +14,8 @@ const About: React.FC = () => {
       canvasParentRef
     );
 
+    p5.frameRate(10);
+
     const resolution = 10;
     const cols = Math.floor(window.innerWidth / resolution);
     const rows = Math.floor(window.innerHeight / resolution);

@@ -50,7 +50,7 @@ class GameOfLife {
         let x = i * this.resolution;
         let y = j * this.resolution;
         if (this.grid[i][j] === 1) {
-          this.p5.fill("#f8f8f8");
+          this.p5.fill("rgba(255,255,255,0.2)");
           this.p5.rect(x, y, this.resolution - 1, this.resolution - 1);
         }
       }
