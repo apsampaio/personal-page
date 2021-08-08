@@ -8,6 +8,7 @@ export const Container = styled.div`
   background: transparent;
 
   display: flex;
+  flex-direction: column;
 `;
 
 export const Canvas = styled(Sketch)`
@@ -15,17 +16,15 @@ export const Canvas = styled(Sketch)`
 `;
 
 export const Header = styled.div`
-  height: 70px;
+  height: 120px;
   width: 100%;
 
   display: flex;
 
-  padding: 0px 16px;
+  padding: 0px 15%;
 
   align-items: center;
   justify-content: space-between;
-
-  z-index: 15;
 `;
 
 export const Logo = styled.img`
@@ -48,7 +47,7 @@ export const ContactButton = styled.button`
   font-size: 1rem;
   font-weight: 600;
 
-  padding: 0.6rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 100px;
   border: 2px solid white;
 
@@ -60,5 +59,44 @@ export const ContactButton = styled.button`
     cursor: pointer;
     background-color: white;
     color: black;
+  }
+`;
+
+export const GreetContainer = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 5rem;
+
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    color: white;
+
+    text-align: center;
+
+    padding: 0 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: white;
+
+    margin-top: 1rem;
+    font-weight: 300;
+  }
+
+  img {
+    width: 15rem;
+
+    border: 2px solid white;
+    border-radius: 100%;
+
+    margin-top: 5rem;
   }
 `;

@@ -1,8 +1,17 @@
 import React from "react";
 import P5 from "p5";
 
-import { Container, Canvas, Header, Logo, ContactButton } from "./styles";
+import {
+  Container,
+  Canvas,
+  Header,
+  Logo,
+  ContactButton,
+  GreetContainer,
+} from "./styles";
+
 import LogoImage from "../../assets/moai.png";
+import ProfileImage from "../../assets/profile.png";
 
 import { GameOfLife } from "./GameOfLife";
 
@@ -33,11 +42,16 @@ const About: React.FC = () => {
 
   return (
     <Container>
-      <Canvas draw={draw} setup={setup} windowResized={handlewindowResize} />
+      {/* <Canvas draw={draw} setup={setup} windowResized={handlewindowResize} /> */}
       <Header>
         <Logo src={LogoImage} alt="moai" />
         <ContactButton>SAY HELLO</ContactButton>
       </Header>
+      <GreetContainer>
+        <h1>Front-end, Back-end & Mobile Developer</h1>
+        <p>I simply code for enthusiasm</p>
+        <img src={ProfileImage} alt="profile" />
+      </GreetContainer>
     </Container>
   );
 };
