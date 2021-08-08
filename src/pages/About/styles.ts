@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
+  overflow: auto;
 `;
 
 export const Canvas = styled(Sketch)`
@@ -25,6 +26,8 @@ export const Header = styled.div`
 
   align-items: center;
   justify-content: space-between;
+
+  z-index: 15;
 `;
 
 export const Logo = styled.img`
@@ -64,6 +67,7 @@ export const ContactButton = styled.button`
 
 export const GreetContainer = styled.div`
   width: 100%;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -72,6 +76,8 @@ export const GreetContainer = styled.div`
   justify-content: center;
 
   padding-top: 5rem;
+
+  z-index: 15;
 
   h1 {
     font-family: "Inter", sans-serif;
@@ -99,4 +105,19 @@ export const GreetContainer = styled.div`
 
     margin-top: 5rem;
   }
+`;
+
+export const SkillsContainer = styled.div`
+  width: 100%;
+  background-color: #1d1d1f;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 5rem;
+
+  z-index: 15;
 `;

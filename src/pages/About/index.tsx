@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import P5 from "p5";
 
 import {
@@ -8,6 +8,7 @@ import {
   Logo,
   ContactButton,
   GreetContainer,
+  SkillsContainer,
 } from "./styles";
 
 import LogoImage from "../../assets/moai.png";
@@ -18,6 +19,8 @@ import { GameOfLife } from "./GameOfLife";
 let background: GameOfLife;
 
 const About: React.FC = () => {
+  const [animate, setAnimate] = useState(true);
+
   const setup = (p5: P5, canvasParentRef: any) => {
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
       canvasParentRef
@@ -42,7 +45,9 @@ const About: React.FC = () => {
 
   return (
     <Container>
-      {/* <Canvas draw={draw} setup={setup} windowResized={handlewindowResize} /> */}
+      {animate && (
+        <Canvas draw={draw} setup={setup} windowResized={handlewindowResize} />
+      )}
       <Header>
         <Logo src={LogoImage} alt="moai" />
         <ContactButton>SAY HELLO</ContactButton>
@@ -52,6 +57,7 @@ const About: React.FC = () => {
         <p>I simply code for enthusiasm</p>
         <img src={ProfileImage} alt="profile" />
       </GreetContainer>
+      <SkillsContainer></SkillsContainer>
     </Container>
   );
 };

@@ -43,7 +43,7 @@ class GameOfLife {
   };
 
   public show() {
-    this.p5.background("#1d1d1f");
+    this.p5.background("#191622");
 
     for (let i = 0; i < this.cols; i++) {
       for (let j = 0; j < this.rows; j++) {
