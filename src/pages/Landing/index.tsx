@@ -23,7 +23,7 @@ const Landing: React.FC = () => {
       <Content>
         <Name>Andre Sampaio</Name>
         <Skill>SOFTWARE DEVELOPER</Skill>
-        <Greeting>I find solutions and write some code.</Greeting>
+        <Greeting>I simply code for enthusiasm</Greeting>
         <ContactButton>Say Hello</ContactButton>
         <About to="/about">About Me</About>
       </Content>

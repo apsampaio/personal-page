@@ -42,6 +42,14 @@ class GameOfLife {
     return sum;
   };
 
+  public click = () => {
+    for (let i = 0; i < 10; i++) {
+      const randomCol = Math.round(this.p5.random(0, this.cols - 1));
+      const randomRow = Math.round(this.p5.random(0, this.rows - 1));
+      this.grid[randomCol][randomRow] = 1;
+    }
+  };
+
   public show() {
     this.p5.background("#191622");
 

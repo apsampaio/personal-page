@@ -3,17 +3,15 @@ import Sketch from "react-p5";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
 
   background: transparent;
 
   display: flex;
   flex-direction: column;
-  overflow: auto;
 `;
 
 export const Canvas = styled(Sketch)`
-  position: absolute;
+  position: fixed;
 `;
 
 export const Header = styled.div`
@@ -67,15 +65,13 @@ export const ContactButton = styled.button`
 
 export const GreetContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 150px);
 
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
-
-  padding-top: 5rem;
 
   z-index: 15;
 
@@ -104,20 +100,32 @@ export const GreetContainer = styled.div`
     border-radius: 100%;
 
     margin-top: 5rem;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 `;
 
 export const SkillsContainer = styled.div`
   width: 100%;
-  background-color: #1d1d1f;
+  height: 600px;
+  background-color: #7510f7;
 
   display: flex;
-  flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
-  padding-top: 5rem;
+  z-index: 15;
+`;
+
+export const EmptyContainer = styled.div`
+  width: 100%;
+  height: 600px;
+  background-color: transparent;
 
   z-index: 15;
 `;

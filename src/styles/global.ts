@@ -11,11 +11,12 @@ export default createGlobalStyle`
   }
   
   html, body {
-    height: 100%
+    height: 100%;
+    width: 100%;
   }
 
   body {
     background-color: ${({ theme }) => theme.colors.background};
-    overflow: hidden;
+    overflow-x: hidden ;
   }
 `;

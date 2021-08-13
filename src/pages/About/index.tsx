@@ -9,6 +9,7 @@ import {
   ContactButton,
   GreetContainer,
   SkillsContainer,
+  EmptyContainer,
 } from "./styles";
 
 import LogoImage from "../../assets/moai.png";
@@ -26,7 +27,7 @@ const About: React.FC = () => {
       canvasParentRef
     );
 
-    p5.frameRate(10);
+    // p5.frameRate(10);
 
     const resolution = 10;
     const cols = Math.floor(window.innerWidth / resolution);
@@ -43,21 +44,30 @@ const About: React.FC = () => {
     p5.resizeCanvas(window.innerWidth, window.innerHeight);
   };
 
+  const handleClick = (p5: P5) => {
+    if (background) background.click();
+  };
+
   return (
     <Container>
-      {animate && (
-        <Canvas draw={draw} setup={setup} windowResized={handlewindowResize} />
-      )}
+      <Canvas
+        draw={draw}
+        setup={setup}
+        windowResized={handlewindowResize}
+        mousePressed={handleClick}
+      />
+
       <Header>
         <Logo src={LogoImage} alt="moai" />
         <ContactButton>SAY HELLO</ContactButton>
       </Header>
       <GreetContainer>
         <h1>Front-end, Back-end & Mobile Developer</h1>
-        <p>I simply code for enthusiasm</p>
+        <p>I find solutions and write some code.</p>
         <img src={ProfileImage} alt="profile" />
       </GreetContainer>
       <SkillsContainer></SkillsContainer>
+      <EmptyContainer />
     </Container>
   );
 };
