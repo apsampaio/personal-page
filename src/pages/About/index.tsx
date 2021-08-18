@@ -10,6 +10,8 @@ import {
   GreetContainer,
   SkillsContainer,
   EmptyContainer,
+  TerminalContainer,
+  TerminalHeader,
 } from "./styles";
 
 import LogoImage from "../../assets/moai.png";
@@ -50,13 +52,14 @@ const About: React.FC = () => {
 
   return (
     <Container>
-      <Canvas
-        draw={draw}
-        setup={setup}
-        windowResized={handlewindowResize}
-        mousePressed={handleClick}
-      />
-
+      {animate && (
+        <Canvas
+          draw={draw}
+          setup={setup}
+          windowResized={handlewindowResize}
+          mousePressed={handleClick}
+        />
+      )}
       <Header>
         <Logo src={LogoImage} alt="moai" />
         <ContactButton>SAY HELLO</ContactButton>
@@ -67,7 +70,15 @@ const About: React.FC = () => {
         <img src={ProfileImage} alt="profile" />
       </GreetContainer>
       <SkillsContainer></SkillsContainer>
-      <EmptyContainer />
+      <EmptyContainer>
+        <TerminalContainer>
+          <TerminalHeader>
+            <span />
+            <span />
+            <span />
+          </TerminalHeader>
+        </TerminalContainer>
+      </EmptyContainer>
     </Container>
   );
 };

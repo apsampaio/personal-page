@@ -124,8 +124,50 @@ export const SkillsContainer = styled.div`
 
 export const EmptyContainer = styled.div`
   width: 100%;
-  height: 600px;
   background-color: transparent;
 
+  margin-top: -400px;
+
+  display: flex;
+  justify-content: center;
+
   z-index: 15;
+
+  padding-bottom: 5rem;
+`;
+
+export const TerminalContainer = styled.div`
+  width: 400px;
+  height: 800px;
+
+  background-color: #22212c;
+
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+`;
+
+export const TerminalHeader = styled.div`
+  display: flex;
+  align-items: center;
+
+  height: 32px;
+
+  padding: 8px;
+
+  span {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+
+    margin: 4px;
+    background-color: #ffbd2e;
+  }
+
+  span:first-of-type {
+    background-color: #ff5f56;
+  }
+
+  span:last-of-type {
+    background-color: #27c93f;
+  }
 `;
