@@ -12,17 +12,22 @@ import {
   EmptyContainer,
   TerminalContainer,
   TerminalHeader,
+  TerminalBody,
+  Purple,
+  Yellow,
+  Pink,
 } from "./styles";
 
 import LogoImage from "../../assets/moai.png";
 import ProfileImage from "../../assets/profile.png";
+import FrontEndImage from "../../assets/monitor-shimmer.svg";
 
 import { GameOfLife } from "./GameOfLife";
 
 let background: GameOfLife;
 
 const About: React.FC = () => {
-  const [animate, setAnimate] = useState(true);
+  const [animate, setAnimate] = useState(false);
 
   const setup = (p5: P5, canvasParentRef: any) => {
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
@@ -77,6 +82,22 @@ const About: React.FC = () => {
             <span />
             <span />
           </TerminalHeader>
+          <TerminalBody>
+            <img src={FrontEndImage} alt="monitor-shimmer" color="#fff" />
+            <h2>Front-end</h2>
+            <p>I love design, but i'm not too much into client-side</p>
+            <div>
+              <Purple>"languages"</Purple>
+              <Pink>:</Pink> [ <Yellow>"HTML"</Yellow>, <Yellow>"CSS"</Yellow>,{" "}
+              <Yellow>"Pug"</Yellow>, <Yellow>"SASS"</Yellow> ],
+              <br />
+              <Purple>"frameworks"</Purple>: [ "Next.js", "Electron.js",
+              "Boostrap" ],
+              <Purple>"libs"</Purple>: [ "React", "styled-components", "p5.js"
+              ],
+              <Purple>"tools"</Purple>: [ "Figma" ]
+            </div>
+          </TerminalBody>
         </TerminalContainer>
       </EmptyContainer>
     </Container>

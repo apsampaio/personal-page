@@ -150,9 +150,9 @@ export const TerminalHeader = styled.div`
   display: flex;
   align-items: center;
 
-  height: 32px;
+  height: 2rem;
 
-  padding: 8px;
+  padding: 0.5rem;
 
   span {
     width: 12px;
@@ -170,4 +170,43 @@ export const TerminalHeader = styled.div`
   span:last-of-type {
     background-color: #27c93f;
   }
+`;
+
+export const TerminalBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 1rem 2rem;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  img {
+    height: 56px;
+    width: 56px;
+  }
+
+  h2 {
+    margin: 1rem 0;
+  }
+
+  div {
+    font-family: "JetBrains Mono", monospace;
+    color: #e1e1e6;
+  }
+`;
+
+export const Purple = styled.span`
+  color: #988bc7;
+`;
+
+export const Pink = styled.span`
+  color: #ff79c6;
+`;
+
+export const Yellow = styled.span`
+  color: #e7de79;
 `;
