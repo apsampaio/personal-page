@@ -193,20 +193,28 @@ export const TerminalBody = styled.div`
     margin: 1rem 0;
   }
 
-  div {
-    font-family: "JetBrains Mono", monospace;
-    color: #e1e1e6;
+  p {
+    margin: 0.5rem 0;
   }
-`;
 
-export const Purple = styled.span`
-  color: #988bc7;
-`;
+  pre {
+    code span {
+      font-family: "JetBrains Mono", monospace !important;
+      font-size: 16px !important;
+    }
 
-export const Pink = styled.span`
-  color: #ff79c6;
-`;
-
-export const Yellow = styled.span`
-  color: #e7de79;
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #44475a;
+      border-radius: 0px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #191622;
+      border-radius: 0px;
+      box-shadow: inset 0px 0px 0px 0px #41414d;
+    }
+  }
 `;

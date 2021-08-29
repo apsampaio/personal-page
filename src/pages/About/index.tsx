@@ -13,10 +13,9 @@ import {
   TerminalContainer,
   TerminalHeader,
   TerminalBody,
-  Purple,
-  Yellow,
-  Pink,
 } from "./styles";
+
+import Code from "../../components/Code";
 
 import LogoImage from "../../assets/moai.png";
 import ProfileImage from "../../assets/profile.png";
@@ -26,8 +25,35 @@ import { GameOfLife } from "./GameOfLife";
 
 let background: GameOfLife;
 
+const frontEndCode = `{
+  "languages": [
+    "HTML",
+    "CSS",
+    "Pug",
+    "SASS"
+  ],
+  "libs": [
+    "React",
+    "p5.js",
+    "styled-components"
+  ],
+  "frameworks": [
+    "Next.js",
+    "Electron.js",
+    "Bootstrap"
+  ],
+  "mobile": [
+    "React Native",
+    "Flutter"
+  ],
+  "tools": [
+    "Expo",
+    "Figma"
+  ]
+}`;
+
 const About: React.FC = () => {
-  const [animate, setAnimate] = useState(false);
+  const [animate, setAnimate] = useState(true);
 
   const setup = (p5: P5, canvasParentRef: any) => {
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
@@ -85,18 +111,8 @@ const About: React.FC = () => {
           <TerminalBody>
             <img src={FrontEndImage} alt="monitor-shimmer" color="#fff" />
             <h2>Front-end</h2>
-            <p>I love design, but i'm not too much into client-side</p>
-            <div>
-              <Purple>"languages"</Purple>
-              <Pink>:</Pink> [ <Yellow>"HTML"</Yellow>, <Yellow>"CSS"</Yellow>,{" "}
-              <Yellow>"Pug"</Yellow>, <Yellow>"SASS"</Yellow> ],
-              <br />
-              <Purple>"frameworks"</Purple>: [ "Next.js", "Electron.js",
-              "Boostrap" ],
-              <Purple>"libs"</Purple>: [ "React", "styled-components", "p5.js"
-              ],
-              <Purple>"tools"</Purple>: [ "Figma" ]
-            </div>
+            <p>I love design, but i'm not too much into client-side.</p>
+            <Code>{frontEndCode}</Code>
           </TerminalBody>
         </TerminalContainer>
       </EmptyContainer>
