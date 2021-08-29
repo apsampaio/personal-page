@@ -22,4 +22,4 @@ const Code: React.FC = ({ children }) => {
   );
 };
 
-export default Code;
+export { Code };
